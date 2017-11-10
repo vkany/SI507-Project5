@@ -5,6 +5,7 @@ from secret_data import app_id , app_secret, personal_token
 import webbrowser
 import json
 from datetime import datetime
+import csv
 
 ## CACHING SETUP
 APP_ID = app_id
@@ -124,10 +125,30 @@ def get_response_diction(query,location):
 
 
 # response_diction = json.loads(r.text)
-print(json.dumps(get_response_diction('Art Show','New York'), indent=2))
-print(json.dumps(get_response_diction('Music Concerts','Detroit'), indent=2))
-# with open("Detroit_art_events.csv", 'w', newline='') as ark:
-#     writer = csv.writer(ark)
-#     ark.write("Name,Location,Type,Address,Description\n")
-#     for obj in arkansas_natl_sites:
-#         writer.writerow([obj.name, obj.location, obj.type, obj.get_mailing_address(), obj.description])
+det_music = get_response_diction('Art Show','New York')
+ny_art = get_response_diction('Art Show','New York')
+# print(json.dumps(get_response_diction('Art Show','New York'), indent=2))
+# print(json.dumps(get_response_diction('Music Concerts','Detroit'), indent=2))
+# def filter_details(diction):
+#     for event in diction["events"]:
+#         name = event["name"]["text"]
+#         time = event["start"]["local"]
+#         description = event["description"]["text"]
+#         url = event["resource_uri"]
+#     details= [name, time, description,url]
+#     return details
+#
+# print(filter_details(det_music))
+
+
+with open("Detroit_Music_Events.csv", 'w', newline='') as concerts_list:
+    writer = csv.writer(concerts_list)
+    concerts_list.write("Event Name, Time, Description, Event URL\n")
+    for event in det_music["events"]:
+        writer.writerow([event["name"]["text"],event["start"]["local"], event["description"]["text"],event["url"]])
+
+with open("NY_Art_Events.csv", 'w', newline='') as artshows_list:
+    writer = csv.writer(artshows_list)
+    artshows_list.write("Event Name, Time, Description, Event URL\n")
+    for event in ny_art["events"]:
+        writer.writerow([event["name"]["text"],event["start"]["local"], event["description"]["text"],event["url"]])
