@@ -38,7 +38,6 @@ See below for further instructions.
   * [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#auth) **HINT:** This shares a lot in common with the Twitter API! There are certainly client libraries that deal with Tumblr, but you may find it easier to adapt OAuth1 code we've discussed before.
   * [The Eventbrite API](https://www.eventbrite.com/developer/v3/)  -- [Here](https://www.eventbrite.com/developer/v3/api_overview/authentication/) is the page about authentication, since there are a lot of links on that initial page. You'll probably want to look at that page AND select a reasonable `GET` endpoint from the options listed.
 
-
  > You *may* use any client library (like for example [Spotipy](https://github.com/plamere/spotipy) or [Tweepy](http://www.tweepy.org/), although Tweepy is especially nice, and also has some flaws...) to get data from an API if you wish (but not data from Facebook, Twitter, or Spotify) -- but be warned that sometimes, figuring out a complex client library that isn't well documented is more challenging than adapting your own code that does not use a library! It all depends on your end goal and your specific situation.
 
   **Checkpoint #1:** You have selected 1 API, and read its documentation. You have looked at code from class and decidd which method of getting data from an OAuth-authenticated API is a good model for the API you are using in Project 5.
