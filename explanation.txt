@@ -1,1 +1,10 @@
 Put your Project 5 brief explanation, as directed, here.
+
+```I am accessing the Eventbrite search API and gathering:
+    - 50 Tweets for each of 2 users I'm going to search for
+    - I create a function to access events based on location and type of event.For example you can look up '<art-shows>' in '<city-name>'
+    - I collect the Name of the event, time, description and link to the event
+    - I have cached two different combinations of events and cities happening in the next one week and created 2 CSV files, one for New York Art shows and One for Music concerts in Detroit.
+    - Data in each CSV file: 4 columns -- Event Name, Time, Description, Event URL
+    - URL for the API: <https://www.eventbrite.com/oauth/authorize'>
+    - URL describing the authentication process for the API: <https://www.eventbrite.com/developer/v3/api_overview/authentication/>'''

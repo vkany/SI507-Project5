@@ -1,7 +1,7 @@
 ## import statements:
 
 from requests_oauthlib import OAuth2Session
-from secret_data import app_id , app_secret, personal_token
+from secret_data import app_id , app_secret
 import webbrowser
 import json
 from datetime import datetime
@@ -67,9 +67,6 @@ def make_eb_request(url, params=None):
 
     return CACHE_DICTION[unique_ident]
 
-    # return eb_session.get(url, params=params)
-
-
 def start_eb_session():
     global eb_session
 
@@ -124,8 +121,7 @@ def get_response_diction(query,location):
     })
 
 
-# response_diction = json.loads(r.text)
-det_music = get_response_diction('Art Show','New York')
+det_music = get_response_diction('Music Concerts','Detroit')
 ny_art = get_response_diction('Art Show','New York')
 # print(json.dumps(get_response_diction('Art Show','New York'), indent=2))
 # print(json.dumps(get_response_diction('Music Concerts','Detroit'), indent=2))
